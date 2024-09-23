@@ -19,6 +19,7 @@ class Register extends BaseController
             'confirm_password'  => [ 'label' => 'confirm password', 'rules' => 'matches[password]']
         ];
             
+        
   
         if($this->validate($rules)){
             //$model = new UserModel();

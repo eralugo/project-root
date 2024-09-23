@@ -48,6 +48,7 @@ class User extends BaseController
         // Ahora puedes acceder a los datos del JSON como elementos de un arreglo asociativo
         $nombre = $data['nombre'] ?? null;
         $email = $data['email'] ?? null;
+        $id = $data['id'] ?? null;
 
         $respuesta = [
             'status' => 'success',
@@ -60,10 +61,10 @@ class User extends BaseController
         $builder = $db->table('test');
  
         // Parámetro de ejemplo: obtener usuarios activos
-        $status = 2;
+        //$status = 1;
  
         // Usar consulta parametrizada para evitar inyección SQL
-        $query = $builder->where('id', $status)->get();
+        $query = $builder->where('id', $id)->get();
  
         // Obtener los resultados como un array asociativo
         $respuesta = $query->getResultArray();
